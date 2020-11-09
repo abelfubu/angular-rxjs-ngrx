@@ -1,26 +1,125 @@
-# VS Code ES7 React/Redux/React-Native/JS snippets
+# VS Code Typescript Angular/Rxjs/NgRx snippets
 
 [![Version](https://vsmarketplacebadge.apphb.com/version-short/abelfubu.abelfubu-dark.svg)](https://vsmarketplacebadge.apphb.com/version-short/abelfubu.abelfubu-dark.svg)
 [![Install](https://vsmarketplacebadge.apphb.com/installs/abelfubu.abelfubu-dark.svg)](https://vsmarketplacebadge.apphb.com/installs/abelfubu.abelfubu-dark.svg)
 [![Downloads](https://vsmarketplacebadge.apphb.com/downloads/abelfubu.abelfubu-dark.svg)](https://vsmarketplacebadge.apphb.com/downloads/abelfubu.abelfubu-dark.svg)
 [![Ratings](https://vsmarketplacebadge.apphb.com/rating/abelfubu.abelfubu-dark.svg)](https://vsmarketplacebadge.apphb.com/rating/abelfubu.abelfubu-dark.svg)
 
-This extension provides you JavaScript and React/Redux snippets in ES7 with Babel plugin features for [VS Code](https://code.visualstudio.com/)
+This extension provides you Typescript and Angular/RxJs snippets in Angular for [VS Code](https://code.visualstudio.com/)
 
-### Objetivos
+## Installation
 
-- Aprender conceptos básicos de composición de aplicaciones con angular
-- Distribución de la información entre componentes
-- Consulta de una API a través de servicios
-  [Enlace al repositorio de la API (node.js y typescript)](https://github.com/abelfubu/coches-API)
-- Protección de rutas con guards, canActivate y canLoad
-- Gestión del token y inyección del token a los headers
+### Visual Studio Marketplace
 
-![Landing Page del proyecto](https://repository-images.githubusercontent.com/296132550/87ca8480-fe95-11ea-845b-ea08328c9d3b)
+Launch _Quick Open_:
+
+- [_Linux_](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf): `Ctrl+P`
+- [_macOS_](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf): `⌘P`
+- [_Windows_](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf): `Ctrl+P`
+
+Paste the following command and press `Enter`:
+
+```shell
+ext install abelfubu.angular-rxjs-ngrx
+```
+
+### GitHub Repository Clone
+
+Change to your `.vscode/extensions` [VS Code extensions directory](https://code.visualstudio.com/docs/extensions/install-extension#_side-loading).
+Depending on your platform it is located in the following folders:
+
+- _Linux_: `~/.vscode/extensions`
+- _macOS_: `~/.vscode/extensions`
+- _Windows_: `%USERPROFILE%\.vscode\extensions`
+
+Clone the Material Theme repository as `abelfubu.angular-rxjs-ngrx`:
+
+```shell
+git clone https://github.com/abelfubu/angular-rxjs-ngrx.git
+```
+
+## Snippets info
+
+Every space inside `{ }` and `( )` means that this is pushed into next line :)
+`$` represent each step after `tab`.
+
+## Angular Snippets
+
+|    Prefix | Method                                                    |
+| --------: | --------------------------------------------------------- |
+|    `ngi→` | `import { Module } from '@angular/folder'`                |
+| `ngihcm→` | `import { HttpClientModule } from '@angular/common/http'` |
+|   `ngdi→` | `private service: Service`                                |
+|   `ngif→` | `*ngIf="condition"`                                       |
+|  `ngfor→` | `*ngFor="let variable of array"`                          |
+
+---
+
+### FormGroup
+
+`ngfg->`
+`ngformgroup->`
+
+```html
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <input type="text" formControlName="control" />
+</form>
+```
+
+### FormControl
+
+`ngfc->`
+`ngformcontrol->`
+
+```html
+<input type="text" formControlName="control" />
+```
+
+### Interface
+
+`ngint->`
+`nginterface->`
+
+```typescript
+export interface name {
+  prop: type;
+}
+```
+
+## NgRx
+
+### Actions
+
+`ngact->` `ngrxaction->`
+
+```typescript
+import { createAction } from '@ngrx/store';
+
+export const action = createAction('[type] action ');
+```
+
+### Reducer
+
+`ngred->` `ngrxred->`
+
+```typescript
+import { createReducer, on } from '@ngrx/store';
+
+export const initialState = {};
+
+const _typeReducer = createReducer(
+  initialState,
+  on(action, state => state)
+);
+
+export function typeReducer(state, action) {
+  return _typeReducer(state, action);
+}
+```
 
 ## Autor
 
-[Abel de la Fuente - Perfil](https://abelfubu.github.io/abelfubu/)
+[Abel de la Fuente - Profile](https://abelfubu.github.io/abelfubu-profile/)
 
 [Github](https://github.com/abelfubu)
 
