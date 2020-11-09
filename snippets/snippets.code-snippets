@@ -1,0 +1,86 @@
+{
+  // NgRx
+  "ngrx createAction": {
+    "scope": "typescript",
+    "prefix": ["ngact", "ngrxaction"],
+    "body": [
+      "import { createAction } from '@ngrx/store';",
+      " ",
+      "export const ${1:action} = createAction('[${2:type}] ${1:action} ');"
+    ],
+    "description": "@ngrx createAction snippet"
+  },
+  "ngrx createReducer": {
+    "scope": "typescript",
+    "prefix": ["ngred", "ngrxreducer"],
+    "body": [
+      "import { createReducer, on } from '@ngrx/store';",
+      "",
+      "export const initialState = ${1|{},[],0|};",
+      "",
+      "const _${2:type}Reducer = createReducer(",
+      "   initialState,",
+      "   on(${3:action}, (${4:state}) => state$5),$0",
+      ");",
+      "",
+      "export function ${2:type}Reducer(state, action) {",
+      "   return _${2:type}Reducer(state, action);",
+      "}"
+    ],
+    "description": "@ngrx createReducer snippet"
+  },
+  // Angular
+  "ng dependency Injection": {
+    "scope": "typescript",
+    "prefix": ["ngdi"],
+    "body": ["${1:private} ${2:service}: ${2/.*/${0:/capitalize}/}$0"],
+    "description": "angular dependency injection snippet"
+  },
+  "ngIf": {
+    "scope": "html",
+    "prefix": "ngif",
+    "body": ["*ngIf=\"${1:condition}\"$0"],
+    "description": "angular *ngIf snippet"
+  },
+  "ngFor": {
+    "scope": "html",
+    "prefix": "ngfor",
+    "body": ["*ngFor=\"let ${1:variable} of ${2:array}\"$0"],
+    "description": "angular *ngFor snippet"
+  },
+  "formGroup": {
+    "scope": "html",
+    "prefix": ["ngfg", "ngformGroup"],
+    "body": [
+      "<form [formGroup]=\"${1:form}\" (ngSubmit)=\"${2:onSubmit}()\">",
+      "   <input type=\"${3:text}\" formControlName=\"${4:control}\" />$0",
+      "</form>"
+    ],
+    "description": "angular html FormGroup snippet"
+  },
+  "formControl": {
+    "scope": "html",
+    "prefix": ["ngfc", "ngformControl"],
+    "body": ["<input type=\"${1:text}\" formControlName=\"${2:control}\" />"],
+    "description": "angular html FormControl snippet"
+  },
+  "interface": {
+    "scope": "typescript",
+    "prefix": ["ngint", "nginterface"],
+    "body": ["export interface ${1:name} {", "   ${2:prop}: ${3:type}", "}"],
+    "description": "angular interface snippet"
+  },
+  // Imports
+  "HttpClientModule": {
+    "scope": "typescript",
+    "prefix": ["ngihcm", "ngihttpclientmodule"],
+    "body": "import { ${0:HttpClientModule} } from '@angular/common/http';",
+    "description": "angular import HttpClientModule"
+  },
+  "Angular imports": {
+    "scope": "typescript",
+    "prefix": ["ngi", "ngimport"],
+    "body": "import { ${2:Module} } from '@angular/${1:folder}';$0",
+    "description": "angular imports"
+  }
+}
