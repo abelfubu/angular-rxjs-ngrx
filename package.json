@@ -16,5 +16,10 @@
         "path": "./snippets/snippets.code-snippets"
       }
     ]
+  },
+  "publisher": "abelfubu",
+  "icon": "images/angular.png",
+  "repository": {
+    "url": "https://github.com/abelfubu/angular-rxjs-ngrx.git"
   }
 }
