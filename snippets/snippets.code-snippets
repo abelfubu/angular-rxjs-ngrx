@@ -4,9 +4,9 @@
     "scope": "typescript",
     "prefix": ["ngact", "ngrxaction"],
     "body": [
-      "import { createAction } from '@ngrx/store';",
+      "import { createAction, props } from '@ngrx/store';",
       " ",
-      "export const ${1:action} = createAction('[${2:type}] ${1:action} ');"
+      "export const ${1:action} = createAction('[${2:type}] ${3:actionName}', props<{${4:prop}: ${5:type}}>());$0"
     ],
     "description": "@ngrx createAction snippet"
   },
@@ -36,6 +36,30 @@
     "body": ["${1:private} ${2:service}: ${2/.*/${0:/capitalize}/}$0"],
     "description": "angular dependency injection snippet"
   },
+  "method": {
+    "scope": "typescript",
+    "prefix": ["ngmethod"],
+    "body": ["${1:name}(${2:params}): ${4:void} {", "   $0", "}"],
+    "description": "angular class method snippet"
+  },
+  "route": {
+    "scope": "typescript",
+    "prefix": ["ngroute"],
+    "body": ["{ path: '${1:name}', component: ${2:component} },$0"],
+    "description": "angular route snippet"
+  },
+  "formBuilder": {
+    "scope": "typescript",
+    "prefix": ["ngfb", "ngformbuilder"],
+    "body": [
+      "this.${1:form} = fb.group({",
+      "   ${2:name}: ['', Validators$4.${3:required}],$0",
+      "});"
+    ],
+    "description": "angular formBuilder snippet"
+  },
+
+  // Angular HTML
   "ngIf": {
     "scope": "html",
     "prefix": "ngif",
@@ -47,6 +71,18 @@
     "prefix": "ngfor",
     "body": ["*ngFor=\"let ${1:variable} of ${2:array}\"$0"],
     "description": "angular *ngFor snippet"
+  },
+  "events": {
+    "scope": "html",
+    "prefix": ["nge", "ngevent", "ngclick"],
+    "body": ["(${1:click})=\"${2:method}()\"$0"],
+    "description": "angular dom events snippet"
+  },
+  "routerLink": {
+    "scope": "html",
+    "prefix": ["ngrl"],
+    "body": ["routerLink=\"/${2:route}\"$0"],
+    "description": "angular routerLink snippet"
   },
   "formGroup": {
     "scope": "html",
@@ -61,14 +97,20 @@
   "formControl": {
     "scope": "html",
     "prefix": ["ngfc", "ngformControl"],
-    "body": ["<input type=\"${1:text}\" formControlName=\"${2:control}\" />"],
+    "body": ["<input type=\"${1:text}\" formControlName=\"${2:control}\" />$0"],
     "description": "angular html FormControl snippet"
   },
   "interface": {
     "scope": "typescript",
     "prefix": ["ngint", "nginterface"],
-    "body": ["export interface ${1:name} {", "   ${2:prop}: ${3:type}", "}"],
+    "body": ["export interface ${1:name} {", "   ${2:prop}: ${3:type};$0", "}"],
     "description": "angular interface snippet"
+  },
+  "enum": {
+    "scope": "typescript",
+    "prefix": ["ngenum"],
+    "body": ["export enum ${1:name} {", "   ${2:prop} = ${3:value},$0", "}"],
+    "description": "angular enum snippet"
   },
   // Imports
   "HttpClientModule": {

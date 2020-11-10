@@ -1,9 +1,9 @@
 # VS Code Typescript Angular/Rxjs/NgRx snippets
 
-[![Version](https://vsmarketplacebadge.apphb.com/version-short/abelfubu.abelfubu-dark.svg)](https://vsmarketplacebadge.apphb.com/version-short/abelfubu.abelfubu-dark.svg)
-[![Install](https://vsmarketplacebadge.apphb.com/installs/abelfubu.abelfubu-dark.svg)](https://vsmarketplacebadge.apphb.com/installs/abelfubu.abelfubu-dark.svg)
-[![Downloads](https://vsmarketplacebadge.apphb.com/downloads/abelfubu.abelfubu-dark.svg)](https://vsmarketplacebadge.apphb.com/downloads/abelfubu.abelfubu-dark.svg)
-[![Ratings](https://vsmarketplacebadge.apphb.com/rating/abelfubu.abelfubu-dark.svg)](https://vsmarketplacebadge.apphb.com/rating/abelfubu.abelfubu-dark.svg)
+[![Version](https://vsmarketplacebadge.apphb.com/version-short/abelfubu.angular-rxjs-ngrx.svg)](https://vsmarketplacebadge.apphb.com/version-short/abelfubu.angular-rxjs-ngrx.svg)
+[![Install](https://vsmarketplacebadge.apphb.com/installs/abelfubu.angular-rxjs-ngrx.svg)](https://vsmarketplacebadge.apphb.com/installs/abelfubu.angular-rxjs-ngrx.svg)
+[![Downloads](https://vsmarketplacebadge.apphb.com/downloads/abelfubu.angular-rxjs-ngrx.svg)](https://vsmarketplacebadge.apphb.com/downloads/abelfubu.angular-rxjs-ngrx.svg)
+[![Ratings](https://vsmarketplacebadge.apphb.com/rating/abelfubu.angular-rxjs-ngrx.svg)](https://vsmarketplacebadge.apphb.com/rating/abelfubu.angular-rxjs-ngrx.svg)
 
 This extension provides you Typescript and Angular/RxJs snippets in Angular for [VS Code](https://code.visualstudio.com/)
 
@@ -55,6 +55,24 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 
 ---
 
+### (events)
+
+`nge->`
+`ngevent->`
+`ngclick->`
+
+```html
+(click)="method()"
+```
+
+### RouterLink
+
+`ngrl->`
+
+```html
+routerLink="/route"
+```
+
 ### FormGroup
 
 `ngfg->`
@@ -86,6 +104,44 @@ export interface name {
 }
 ```
 
+### Enum
+
+`ngenum->`
+
+```typescript
+export enum name {
+  prop = value,
+}
+```
+
+### Method
+
+`ngmethod->`
+
+```typescript
+name(params): void {
+
+}
+```
+
+### FormBuilder
+
+`ngmethod->`
+
+```typescript
+this.form = fb.group({
+  name: ['', Validators.required],
+});
+```
+
+### Route
+
+`ngroute->`
+
+```typescript
+{ path:name, component: component },
+```
+
 ## NgRx
 
 ### Actions
@@ -93,14 +149,17 @@ export interface name {
 `ngact->` `ngrxaction->`
 
 ```typescript
-import { createAction } from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
 
-export const action = createAction('[type] action ');
+export const action = createAction(
+  '[type] actionName',
+  props<{ prop: type }>()
+);
 ```
 
 ### Reducer
 
-`ngred->` `ngrxred->`
+`ngred->` `ngrxreducer->`
 
 ```typescript
 import { createReducer, on } from '@ngrx/store';
