@@ -55,6 +55,14 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 
 ---
 
+### Constructor
+
+`ngcons`
+
+```typescript
+constructor(private service: Service) { }
+```
+
 ### (events)
 
 `nge->`
@@ -112,6 +120,14 @@ export interface name {
 export enum name {
   prop = value,
 }
+```
+
+### Class properties
+
+`ngp->`
+
+```typescript
+name: type;
 ```
 
 ### Method
