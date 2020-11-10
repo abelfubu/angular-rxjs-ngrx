@@ -41,7 +41,7 @@
   "dependency Injection": {
     "scope": "typescript",
     "prefix": ["ngdi"],
-    "body": ["${1:private} ${2:service}: ${2/.*/${0:/capitalize}/}"],
+    "body": ["${1:private} ${2:service}: ${2/.*/${0:/capitalize}/}$0"],
     "description": "angular dependency injection snippet"
   },
   "method": {
