@@ -139,7 +139,7 @@ this.form = fb.group({
 `ngroute->`
 
 ```typescript
-{ path:name, component: component },
+{ path: name, component: component },
 ```
 
 ## NgRx
