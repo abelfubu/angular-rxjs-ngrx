@@ -2,7 +2,7 @@
   "name": "angular-rxjs-ngrx",
   "displayName": "Typescript Angular/RxJs/NgRx Snippets",
   "description": "A collection of usefull snippets for angular developers",
-  "version": "0.0.4",
+  "version": "0.0.7",
   "engines": {
     "vscode": "^1.51.0"
   },
@@ -13,11 +13,7 @@
     "snippets": [
       {
         "language": "typescript",
-        "path": "./snippets/snippets.code-snippets"
-      },
-      {
-        "language": "html",
-        "path": "./snippets/material.code-snippets"
+        "path": "./snippets/angular-snippets.json"
       }
     ]
   },
