@@ -1,0 +1,42 @@
+{
+  "ngIf": {
+    "scope": "html",
+    "prefix": "ngif",
+    "body": ["*ngIf=\"${1:condition}\"$0"],
+    "description": "angular *ngIf snippet"
+  },
+  "ngFor": {
+    "scope": "html",
+    "prefix": "ngfor",
+    "body": ["*ngFor=\"let ${1:variable} of ${2:array}\"$0"],
+    "description": "angular *ngFor snippet"
+  },
+  "events": {
+    "scope": "html",
+    "prefix": ["nge", "ngevent", "ngclick"],
+    "body": ["(${1:click})=\"${2:method}()\"$0"],
+    "description": "angular dom events snippet"
+  },
+  "routerLink": {
+    "scope": "html",
+    "prefix": ["ngrl"],
+    "body": ["routerLink=\"/${2:route}\"$0"],
+    "description": "angular routerLink snippet"
+  },
+  "formGroup": {
+    "scope": "html",
+    "prefix": ["ngfg", "ngformGroup"],
+    "body": [
+      "<form [formGroup]=\"${1:form}\" (ngSubmit)=\"${2:onSubmit}()\">",
+      "   <input type=\"${3:text}\" formControlName=\"${4:control}\" />$0",
+      "</form>"
+    ],
+    "description": "angular html FormGroup snippet"
+  },
+  "formControl": {
+    "scope": "html",
+    "prefix": ["ngfc", "ngformControl"],
+    "body": ["<input type=\"${1:text}\" formControlName=\"${2:control}\" />$0"],
+    "description": "angular html FormControl snippet"
+  }
+}

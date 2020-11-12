@@ -1,0 +1,56 @@
+{
+  "ngrx createAction": {
+    "scope": "typescript",
+    "prefix": ["ngrxactions"],
+    "body": [
+      "import { createAction, props } from '@ngrx/store';",
+      " ",
+      "export const ${1:action} = createAction('[${2:type}] ${3:actionName}', props<{${4:prop}: ${5:type}}>());$0"
+    ],
+    "description": "@ngrx createAction snippet"
+  },
+  "ngrx createReducer": {
+    "scope": "typescript",
+    "prefix": ["ngrxreducer"],
+    "body": [
+      "import { createReducer, on } from '@ngrx/store';",
+      "",
+      "export interface State {",
+      "  ${1:prop}: ${2:type};",
+      "}",
+      "",
+      "export const initialState: State = {",
+      "  ${1:prop}: ${3:initialValue},",
+      "};",
+      "",
+      "const _${4:type}Reducer = createReducer(",
+      "  initialState,",
+      "  on(${5:action}, (state$6) => state$6),$0",
+      " );",
+      " ",
+      "export function ${4:type}Reducer(state, action): State  {",
+      "  return _${4:type}Reducer(state, action);",
+      "}"
+    ],
+    "description": "@ngrx createReducer snippet"
+  },
+  "Create App Reducer": {
+    "prefix": "ngrxappreducers",
+    "scope": "typescript",
+    "body": [
+      "import { ActionReducerMap } from '@ngrx/store';",
+      "import * as ${1:T} from './$2';",
+      "",
+      "export interface AppState {",
+      "  ui: ${1:T}.State;",
+      "}",
+      "",
+      "export const appReducers: ActionReducerMap<AppState> = {",
+      "  ui: ${1:T}.${3:reducer},",
+      "};",
+      "",
+      "// Insert ${4:appReducers} in the app.module imports for StoreModule$0"
+    ],
+    "description": "Create App Reducers"
+  }
+}

@@ -1,35 +1,4 @@
 {
-  // NgRx
-  "ngrx createAction": {
-    "scope": "typescript",
-    "prefix": ["ngact", "ngrxaction"],
-    "body": [
-      "import { createAction, props } from '@ngrx/store';",
-      " ",
-      "export const ${1:action} = createAction('[${2:type}] ${3:actionName}', props<{${4:prop}: ${5:type}}>());$0"
-    ],
-    "description": "@ngrx createAction snippet"
-  },
-  "ngrx createReducer": {
-    "scope": "typescript",
-    "prefix": ["ngred", "ngrxreducer"],
-    "body": [
-      "import { createReducer, on } from '@ngrx/store';",
-      "",
-      "export const initialState = ${1|{},[],0|};",
-      "",
-      "const _${2:type}Reducer = createReducer(",
-      "   initialState,",
-      "   on(${3:action}, (${4:state}) => state$5),$0",
-      ");",
-      "",
-      "export function ${2:type}Reducer(state, action) {",
-      "   return _${2:type}Reducer(state, action);",
-      "}"
-    ],
-    "description": "@ngrx createReducer snippet"
-  },
-  // Angular
   "constructor": {
     "scope": "typescript",
     "prefix": ["ngcons"],
@@ -47,7 +16,7 @@
   "method": {
     "scope": "typescript",
     "prefix": ["ngmethod"],
-    "body": ["${1:name}(${2:params}): ${4:void} {", "   $0", "}"],
+    "body": ["${1:name}($2): ${3:void} {", "   $0", "}"],
     "description": "angular class method snippet"
   },
   "route": {
@@ -72,48 +41,6 @@
     ],
     "description": "angular formBuilder snippet"
   },
-
-  // Angular HTML
-  "ngIf": {
-    "scope": "html",
-    "prefix": "ngif",
-    "body": ["*ngIf=\"${1:condition}\"$0"],
-    "description": "angular *ngIf snippet"
-  },
-  "ngFor": {
-    "scope": "html",
-    "prefix": "ngfor",
-    "body": ["*ngFor=\"let ${1:variable} of ${2:array}\"$0"],
-    "description": "angular *ngFor snippet"
-  },
-  "events": {
-    "scope": "html",
-    "prefix": ["nge", "ngevent", "ngclick"],
-    "body": ["(${1:click})=\"${2:method}()\"$0"],
-    "description": "angular dom events snippet"
-  },
-  "routerLink": {
-    "scope": "html",
-    "prefix": ["ngrl"],
-    "body": ["routerLink=\"/${2:route}\"$0"],
-    "description": "angular routerLink snippet"
-  },
-  "formGroup": {
-    "scope": "html",
-    "prefix": ["ngfg", "ngformGroup"],
-    "body": [
-      "<form [formGroup]=\"${1:form}\" (ngSubmit)=\"${2:onSubmit}()\">",
-      "   <input type=\"${3:text}\" formControlName=\"${4:control}\" />$0",
-      "</form>"
-    ],
-    "description": "angular html FormGroup snippet"
-  },
-  "formControl": {
-    "scope": "html",
-    "prefix": ["ngfc", "ngformControl"],
-    "body": ["<input type=\"${1:text}\" formControlName=\"${2:control}\" />$0"],
-    "description": "angular html FormControl snippet"
-  },
   "interface": {
     "scope": "typescript",
     "prefix": ["ngint", "nginterface"],
@@ -126,7 +53,6 @@
     "body": ["export enum ${1:name} {", "   ${2:prop} = ${3:value},$0", "}"],
     "description": "angular enum snippet"
   },
-  // Imports
   "HttpClientModule": {
     "scope": "typescript",
     "prefix": ["ngihcm", "ngihttpclientmodule"],
@@ -138,134 +64,5 @@
     "prefix": ["ngi", "ngimport"],
     "body": "import { ${2:Module} } from '@angular/${1:folder}';$0",
     "description": "angular imports"
-  }
-  // Material snippets
-  "Material icon button": {
-    "prefix": "matbutton",
-    "scope": "html",
-    "body": [
-      "<button ${1|mat-button, mat-raised-button, mat-stroked-button, mat-flat-button, mat-icon-button, mat-fab, mat-mini-fab|} color=\"${2|primary,accent,warn|}\">",
-      "  <mat-icon>${0|menu, delete, edit, config|}</mat-icon>",
-      "</button>"
-    ],
-    "description": "Material icon button"
-  },
-  "Material checkbox": {
-    "prefix": "matcheckbox",
-    "scope": "html",
-    "body": [
-      "<mat-checkbox ${1|formControlName,[(ngModel)]|}=\"${2:control}\">${3:value}</mat-checkbox>$0"
-    ],
-    "description": "Material checkbox"
-  },
-  "Material radio button": {
-    "prefix": "matradio",
-    "scope": "html",
-    "body": [
-      "<mat-radio-group ${1|formControlName,[(ngModel)]|}=\"${2:control}\">",
-      "  <mat-radio-button value=\"after\">${3:value}</mat-radio-button>",
-      "  <mat-radio-button value=\"before\">${4:value}</mat-radio-button>",
-      "</mat-radio-group>$0"
-    ],
-    "description": "Material radio button"
-  },
-  "Material date picker": {
-    "prefix": "matradio",
-    "scope": "html",
-    "body": [
-      "<mat-form-field color=\"${1|primary,accent,warn|}\">",
-      "  <mat-label>${2:label}</mat-label>",
-      "  <input matInput [matDatepicker]=\"picker\" ${3|formControlName,[(ngModel)]|}=\"${4:control}\">",
-      "  <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>",
-      "  <mat-datepicker #picker></mat-datepicker>",
-      "</mat-form-field>"
-    ],
-    "description": "Material date picker"
-  },
-  "Material input": {
-    "prefix": "matinput",
-    "scope": "html",
-    "body": [
-      "<mat-form-field>",
-      "  <mat-label>${1:label}</mat-label>",
-      "  <input matInput placeholder=\"${2:label}\" ${3|formControlName,[(ngModel)]|}=\\\"${4:control}\\\">",
-      "</mat-form-field>"
-    ],
-    "description": "Material input"
-  },
-  "Material list": {
-    "prefix": "matlist",
-    "scope": "html",
-    "body": [
-      "<mat-list role=\"list\">",
-      "  <mat-list-item role=\"listitem\">${1:text}</mat-list-item>$0",
-      "</mat-list>"
-    ],
-    "description": "Material list"
-  },
-  "Material menu": {
-    "prefix": "matmenu",
-    "body": [
-      "<button mat-button [matMenuTriggerFor]=\"menu\">Menu</button>",
-      "<mat-menu #menu=\"matMenu\">",
-      "  <button mat-menu-item>${1:text}</button>$0",
-      "</mat-menu>"
-    ],
-    "description": "Material menu"
-  },
-  "Material select": {
-    "prefix": "matselect",
-    "body": [
-      "<mat-form-field>",
-      "  <mat-label>${1:label}</mat-label>",
-      "  <mat-select ${2|formControlName,[(ngModel)]|}=\"${3:control}\" multiple>",
-      "    <mat-option [value]=\"$0\">${4:text}</mat-option>",
-      "  </mat-select>",
-      "</mat-form-field>"
-    ],
-    "description": "Material select"
-  },
-  "Material sidenav": {
-    "prefix": "matsidenav",
-    "scope": "html",
-    "body": [
-      "<mat-sidenav-container>",
-      "  <mat-sidenav mode=\"side\" opened>Sidenav content</mat-sidenav>",
-      "  <mat-sidenav-content>Main content</mat-sidenav-content>",
-      "</mat-sidenav-container>"
-    ],
-    "description": "Material sidenav"
-  },
-  "Material tabs": {
-    "prefix": "mattabs",
-    "scope": "html",
-    "body": [
-      "<mat-tab-group>",
-      "  <mat-tab label=\"First\"> Content 1 </mat-tab>",
-      "  <mat-tab label=\"Second\"> Content 2 </mat-tab>",
-      "  <mat-tab label=\"Third\"> Content 3 </mat-tab>",
-      "</mat-tab-group>"
-    ],
-    "description": "Material tabs"
-  },
-  "Material toolbar": {
-    "prefix": "mattoolbar",
-    "body": [
-      "// Add the css class .spacer { flex: 1 1 auto }",
-      "<mat-toolbar color=\"primary\">",
-      "  <button mat-icon-button>",
-      "    <mat-icon>menu</mat-icon>",
-      "  </button>",
-      "  <span>My App</span>",
-      "  <span class=\"spacer\"></span>",
-      "  <button mat-icon-button>",
-      "    <mat-icon>favorite</mat-icon>",
-      "  </button>",
-      "  <button mat-icon-button>",
-      "    <mat-icon>share</mat-icon>",
-      "  </button>",
-      "</mat-toolbar>"
-    ],
-    "description": "Material toolbar"
   }
 }

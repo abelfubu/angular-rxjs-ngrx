@@ -162,7 +162,7 @@ this.form = fb.group({
 
 ### Actions
 
-`ngact->` `ngrxaction->`
+`ngrxaction->`
 
 ```typescript
 import { createAction, props } from '@ngrx/store';
@@ -175,7 +175,7 @@ export const action = createAction(
 
 ### Reducer
 
-`ngred->` `ngrxreducer->`
+`ngrxreducer->`
 
 ```typescript
 import { createReducer, on } from '@ngrx/store';
@@ -192,7 +192,28 @@ export function typeReducer(state, action) {
 }
 ```
 
+### AppReducer
+
+`ngrxappreducer`
+
+```typescript
+import { ActionReducerMap } from '@ngrx/store';
+import * as ${1:T} from './$2';
+
+export interface AppState {
+  ui: ${1:T}.State;
+}
+
+export const appReducers: ActionReducerMap<AppState> = {
+  ui: ${1:T}.${3:reducer},
+};
+
+// Insert ${4:appReducers} in the app.module imports for StoreModule$0
+```
+
 ## Angular Material
+
+### MatButton
 
 `matbutton->`
 
