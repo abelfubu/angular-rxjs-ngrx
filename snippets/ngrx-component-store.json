@@ -1,0 +1,82 @@
+{
+  "ngrxcomponent": {
+    "prefix": "ngrxcomponent",
+    "body": [
+      "import { Injectable } from '@angular/core';",
+      "import { ComponentStore, tapResponse } from '@ngrx/component-store';",
+      "import { Observable } from 'rxjs';",
+      "import { switchMap } from 'rxjs/operators';",
+      "import { User } from './models/User';",
+      "import { DataService } from './services/data.service';",
+      "",
+      "export interface ${1:State} {",
+      "  users: User[];",
+      "}",
+      "",
+      "const DEFAULT_STATE: ${1} = {",
+      "  users: [],",
+      "};",
+      "",
+      "@Injectable()",
+      "export class AppStore extends ComponentStore<${1}> {",
+      "  constructor(private readonly dataService: DataService) {",
+      "    super(DEFAULT_STATE);",
+      "  }",
+      "",
+      "  readonly users$ = this.select(({ users }) => users);",
+      "",
+      "  readonly getUsers = this.effect(trigger$ =>",
+      "    trigger$.pipe(",
+      "      switchMap(() =>",
+      "        this.dataService.getData().pipe(",
+      "          tapResponse(",
+      "            users => this.addUsers(users),",
+      "            error => console.log(error),",
+      "          ),",
+      "        ),",
+      "      ),",
+      "    ),",
+      "  );",
+      "",
+      "  readonly addUsers = this.updater((state, users: User[]) => ({",
+      "    ...state,",
+      "    users,",
+      "  }));",
+      "}",
+      "",
+      "// SwitchMap cancels previous requests and only perform the last one",
+      "// MergeMap performs all requests in parallel",
+      "// ConcatMap Performs all requests in sequence",
+      "// ExhaustMap cancels last requests until first request is finished"
+    ],
+    "description": "ngrxcomponent"
+  },  
+  "updater": {
+    "prefix": "ngrxupdater",
+    "body": [
+      "readonly ${1:name} = this.updater((state, ${2:arg}: ${3:argType}) => ({",
+      "  ...state,",
+      "  $2,",
+      "}));"
+    ],
+    "description": "NgRx Component store updater"
+  },
+  "effect": {
+    "prefix": "ngrxeffectcompstore",
+    "body": [
+      "  readonly ${1:name} = this.effect(${2:arg}$ =>",
+      "    $2$.pipe(",
+      "      ${3|switchMap,exhaustMap,concatMap,mergeMap|}(() =>",
+      "        this.${4:service}.${5:method}().pipe(",
+      "          tapResponse(",
+      "            ${6:data} => this.${7:updater}($6),",
+      "            error => console.log(error),",
+      "          ),",
+      "        ),",
+      "      ),",
+      "    ),",
+      "  );"
+    ],
+    "description": "NgRx Component store updater"
+  }  
+}

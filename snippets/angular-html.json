@@ -38,5 +38,11 @@
     "prefix": ["ngfc", "ngformControl"],
     "body": ["<input type=\"${1:text}\" formControlName=\"${2:control}\" />$0"],
     "description": "angular html FormControl snippet"
+  },
+  "formControlName": {
+    "scope": "html",
+    "prefix": ["ngfcn", "ngformcontrolname"],
+    "body": "formControlName=\"${1:name}\"",
+    "description": "Angular snippet for formControlName"
   }
 }

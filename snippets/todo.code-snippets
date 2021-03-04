@@ -1,0 +1,17 @@
+{
+  "Todo tree todo": {
+    "prefix": "todo",
+    "body": "$LINE_COMMENT $CURRENT_DATE/$CURRENT_MONTH/$CURRENT_YEAR  \n$LINE_COMMENT TODO: $0",
+    "description": "Todo snippet"
+  },
+  "Todo tree fixme": {
+    "prefix": "fixme",
+    "body": "$LINE_COMMENT $CURRENT_DATE/$CURRENT_MONTH/$CURRENT_YEAR  \n$LINE_COMMENT FIXME: $0",
+    "description": "Fixme snippet"
+  },
+  "Todo tree bug": {
+    "prefix": "bug",
+    "body": "$LINE_COMMENT $CURRENT_DATE/$CURRENT_MONTH/$CURRENT_YEAR  \n$LINE_COMMENT BUG: $0",
+    "description": "Bug snippet"
+  },
+}

@@ -1,0 +1,7 @@
+{
+  "data-cy": {
+    "prefix": "cy",
+    "body": "data-cy=\"${1:selector}\"",
+    "description": "data-cy cypress selector"
+  }
+}

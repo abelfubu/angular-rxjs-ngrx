@@ -64,5 +64,17 @@
     "prefix": ["ngi", "ngimport"],
     "body": "import { ${2:Module} } from '@angular/${1:folder}';$0",
     "description": "angular imports"
+  },
+  "@Input()": {
+    "scope": "typescript",
+    "prefix": "nginput",
+    "body": "@Input$1() ${2:prop} = ${3:value};",
+    "description": "Angular input"
+  },
+  "@Output()": {
+    "scope": "typescript",
+    "prefix": "ngoutput",
+    "body": "@Output$1() ${2:prop} = new EventEmitter$4<${3:type}>();",
+    "description": "Angular output"
   }
 }
