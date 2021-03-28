@@ -1,0 +1,42 @@
+{
+  "Grid Autofill": {
+    "scope": "css,scss",
+    "prefix": "gridautofill",
+    "body": [
+      ".grid-autofill {  ",
+      "  display: grid;",
+      "  grid-template-columns: repeat(auto-fill, minmax(${1:300px}, 1fr));",
+      "  grid-gap: ${2:32px};",
+      "}"
+    ],
+    "description": "Grid Autofill"
+  },
+  "Main Css Styles": {
+		"scope": "css,scss",
+		"prefix": "main",
+		"body": [
+      "* {",
+      "  -webkit-font-smoothing: antialiased;",
+      "  -moz-osx-font-smoothing: grayscale;",
+      "  font-family: Arial, sans-serif;",
+      "  box-sizing: border-box;",
+      "  margin: 0;",
+      "  padding: 0;",
+      "  scroll-behavior: smooth;",
+      "}"
+		],
+		"description": "Main Css Styles"
+	},
+  "Flex": {
+    "scope": "css,scss",
+    "prefix": "flex",
+    "body": [
+      ".flex {  ",
+      "  display: flex;",
+      "  justify-content: ${1|space-between,flex-end,center|};",
+      "  align-items: ${2|center,flex-end|};",
+      "}"
+    ],
+    "description": "Flex"
+  }
+}

@@ -2,7 +2,7 @@
   "name": "angular-rxjs-ngrx",
   "displayName": "Typescript Angular/RxJs/NgRx Snippets",
   "description": "A collection of usefull snippets for angular developers, including some snippets for NgRx, NgRx component store, cypress, angular material, todo tree and much more",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "engines": {
     "vscode": "^1.51.0"
   },
@@ -41,6 +41,9 @@
       },
       {
         "path": "./snippets/todo.code-snippets"
+      },
+      {
+        "path": "./snippets/css.code-snippets"
       }
     ]
   },
