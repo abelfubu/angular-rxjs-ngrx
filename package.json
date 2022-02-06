@@ -47,8 +47,9 @@
       }
     ]
   },
-  "publisher": "abelfubu",
+  "publisher": "angular-rxjs-ngrx",
   "icon": "images/angular.png",
+  "license": "ISC",
   "repository": {
     "url": "https://github.com/abelfubu/angular-rxjs-ngrx.git"
   }
